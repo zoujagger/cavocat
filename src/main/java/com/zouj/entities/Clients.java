@@ -37,6 +37,20 @@ public class Clients extends Personne{
 		super(nom, prenom, adresse, email);
 		// TODO Auto-generated constructor stub
 	}
+	
+	/**
+	 * @param nom
+	 * @param prenom
+	 * @param adresse
+	 * @param email
+	 * @param revenu
+	 * @param profession
+	 */
+	public Clients(String nom, String prenom, String adresse, String email, double revenu, String profession) {
+		super(nom, prenom, adresse, email);
+		this.revenu = revenu;
+		this.profession = profession;
+	}
 	/**
 	 * @param revenu
 	 * @param profession
