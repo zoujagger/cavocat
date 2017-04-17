@@ -3,11 +3,14 @@
  */
 package com.zouj.entities;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 /**
  * @author zouj
@@ -21,9 +24,13 @@ public class CreneauxHoraire {
 	private int HFin;
 	private int MDebut;
 	private int MFin;
+	
 	@ManyToOne
-	@JoinColumn(name="CODE_AVO")
+	@JoinColumn(name="id_avocat")
 	private Avocats avocat;
+	
+	@OneToMany(mappedBy="id")
+	private List<Rdv> rdv;
 	
 
 	/**	
@@ -144,6 +151,22 @@ public class CreneauxHoraire {
 	 */
 	public void setAvocat(Avocats avocat) {
 		this.avocat = avocat;
+	}
+
+
+	/**
+	 * @return the rdv
+	 */
+	public List<Rdv> getRdv() {
+		return rdv;
+	}
+
+
+	/**
+	 * @param rdv the rdv to set
+	 */
+	public void setRdv(List<Rdv> rdv) {
+		this.rdv = rdv;
 	}
 
 	

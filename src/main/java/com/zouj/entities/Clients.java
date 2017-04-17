@@ -3,8 +3,11 @@
  */
 package com.zouj.entities;
 
+import java.util.List;
+
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 
 /**
  * @author zouj
@@ -20,6 +23,9 @@ public class Clients extends Personne{
 	private static final long serialVersionUID = 1L;
 	private double revenu;
 	private String profession;
+	
+	@OneToMany(mappedBy="client")
+	private List<Rdv> rdv;
 	/**
 	 * 
 	 */
@@ -84,7 +90,20 @@ public class Clients extends Personne{
 	public void setProfession(String profession) {
 		this.profession = profession;
 	}
+	/**
+	 * @return the rdv
+	 */
+	public List<Rdv> getRdv() {
+		return rdv;
+	}
+	/**
+	 * @param rdv the rdv to set
+	 */
+	public void setRdv(List<Rdv> rdv) {
+		this.rdv = rdv;
+	}
 
+	
 	/**
 	 * constructeurs and getter and setters
 	 */

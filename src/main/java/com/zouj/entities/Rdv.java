@@ -25,11 +25,13 @@ public class Rdv {
 	
 	@Temporal(TemporalType.DATE)
 	private Date jour;
+	
 	@ManyToOne
-	@JoinColumn(name="CODE_CLI")
+	@JoinColumn(name="id_client")
 	private Clients client;
+	
 	@ManyToOne
-	@JoinColumn(name="CODE_CRE")
+	@JoinColumn(name="id_creneaux_horaire")
 	private CreneauxHoraire crenauHoraire;
 
 	/**

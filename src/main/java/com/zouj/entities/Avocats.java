@@ -3,8 +3,11 @@
  */
 package com.zouj.entities;
 
+import java.util.List;
+
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 
 
 /**
@@ -22,6 +25,9 @@ public class Avocats extends Personne{
 	
 	private String specialite;
 	private double honoraire;
+	
+	@OneToMany(mappedBy="avocat")
+	private List<CreneauxHoraire> creneaux;
 	/**
 	 * 
 	 */
@@ -75,6 +81,18 @@ public class Avocats extends Personne{
 	 */
 	public void setHonoraire(double honoraire) {
 		this.honoraire = honoraire;
+	}
+	/**
+	 * @return the creneaux
+	 */
+	public List<CreneauxHoraire> getCreneaux() {
+		return creneaux;
+	}
+	/**
+	 * @param creneaux the creneaux to set
+	 */
+	public void setCreneaux(List<CreneauxHoraire> creneaux) {
+		this.creneaux = creneaux;
 	}
 	
 	/**
